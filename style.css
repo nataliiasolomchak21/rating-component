@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Overpass", sans-serif;
+}
+
+:root {
+    --text-primary: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: #141519;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+.rating-box {
+    width: fit-content;
+    height: fit-content;
+    background: linear-gradient(to bottom right, #171E28, #1E252F);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Center horizontally */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 5rem 1.5rem 0; 
+}
+
+
+.rating-box .star-img {
+    background-color: #262F38;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjust size of the div */
+    height: 40px;
+    margin-bottom: 1rem;
+}
+    
+.rating-box h1 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.rating-box p {
+    max-width: 19rem;
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.num-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.num-box .num {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: #262F38; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(217, 12%, 63%); 
+    margin: .5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.num-box .num:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: var(--text-primary);
+}
+
+.num-box .num.active {
+    background-color: hsl(217, 12%, 63%);
+    color: var(--text-primary);
+}
+
+
+.rating-box button {
+    width: 100%;
+    height: 3rem;
+    background-color: hsl(25, 97%, 53%);
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    border-radius: 2.5rem;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.rating-box button:hover {
+    background-color: var(--text-primary);
+    color: hsl(25, 97%, 53%);
+}
