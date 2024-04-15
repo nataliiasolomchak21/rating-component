@@ -17,13 +17,30 @@ body {
 }
 
 .rating {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rating,
+.thank-you {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4rem;
 }
 
-.rating-box {
+.thank-you {
+    position: absolute;
+    display: none;
+}
+
+.thank-you.active {
+    display: block;
+}
+
+.rating-box,
+.thank-you-box {
     width: fit-content;
     height: fit-content;
     background: linear-gradient(to bottom right, #171E28, #1E252F);
@@ -33,9 +50,17 @@ body {
     align-items: flex-start; /* Center horizontally */
     padding: 1.5rem;
     border-radius: 1rem;
-    margin: 5rem 1.5rem 0; 
+    margin: 0 1.5rem 0; 
 }
 
+.thank-you-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+}
 
 .rating-box .star-img {
     background-color: #262F38;
@@ -47,15 +72,33 @@ body {
     height: 40px;
     margin-bottom: 1rem;
 }
+
+.thank-you-box .thank-you-img {
+    margin-bottom: 1.5rem;
+    width: 150px;
+    height: 100px;
+}
     
-.rating-box h1 {
+.rating-box h1,
+.thank-you-box h3 {
     color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 700;
     font-size: 25px;
 }
 
-.rating-box p {
+.thank-you-box h2 {
+    font-size: 13px;
+    padding: .6rem;
+    border-radius: 2.5rem;
+    color: hsl(25, 97%, 53%);
+    background-color: #262F38;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.rating-box p,
+.thank-you-box p {
     max-width: 19rem;
     color: hsl(217, 12%, 63%);
     font-size: 15px;
@@ -84,6 +127,7 @@ body {
 .num-box .num:hover {
     background-color: hsl(25, 97%, 53%);
     color: var(--text-primary);
+    transition: .3s ease-in-out;
 }
 
 .num-box .num.active {
@@ -92,7 +136,7 @@ body {
 }
 
 
-.rating-box button {
+.rating-box #submit-btn {
     width: 100%;
     height: 3rem;
     background-color: hsl(25, 97%, 53%);
@@ -103,9 +147,21 @@ body {
     border-radius: 2.5rem;
     border-color: transparent;
     cursor: pointer;
+    transition: .3s ease-in-out;
 }
 
-.rating-box button:hover {
+.rating-box #submit-btn:hover {
     background-color: var(--text-primary);
     color: hsl(25, 97%, 53%);
+}
+
+.rating-box #submit-btn.disabled {
+    background-color: hsl(217, 12%, 63%);
+}
+
+
+@media (min-width: 375px) {
+    .thank-you-box {
+        width: fit-content;
+    }
 }
