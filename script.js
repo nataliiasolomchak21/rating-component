@@ -26,7 +26,7 @@ submitBtn.addEventListener("click", function() {
   if (selectedNum) {
     container.classList.add('active');
     // Set userRating text to the selected num's text content
-    userRating.innerText = selectedNum.textContent;
+    userRating.textContent = selectedNum.textContent;
   } else {
     // If no rating is selected, display a message and hide the container
     userRating.innerText = 'Give a rating please';
